@@ -1,0 +1,38 @@
+html {
+    margin: auto;
+    display: table;
+    background-color: rgb(0, 0, 0)
+}
+
+body {
+    vertical-align: middle;
+    font-family: 'Orion Esperanto Dika';
+}
+
+@font-face {
+    font-family: 'Orion Esperanto Dika';
+    src: url('https://www.fontsaddict.com/fontface/orion-esperanto-dika.TTF');
+}
+
+#registerText {
+    font-family: 'Orion Esperanto Dika';
+}
+
+#registerForm > input {
+    display: flex;
+    margin-left: 55px;
+    margin-top: 5px;
+}
+
+#registerForm > button {
+    display: flex;
+    margin-left: 100px;
+    margin-top: 20px;
+    background-color: rgb(255, 153, 0);
+}
+
+#textContainer {
+    background-color: rgb(255, 153, 0);
+    border-radius: 5px;
+    padding: 5px;
+}

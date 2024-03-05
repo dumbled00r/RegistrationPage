@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Registration Page</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div style="font-size: 35px;" id="registerText">
+            <span style="color: white; display: inline;">Registration</span> 
+            <div style="display: inline;" id="textContainer"> 
+                <span> Form</span>
+            </div>
+        </div>
+        <div style="margin-top: 30px;">
+            <form action="" id="registerForm">
+                <input type="text" id="fullname" placeholder="Full name" style="display: block; text-align: center;">
+                <input type="text" id="phone" placeholder="Phone number" style="display: block; text-align: center">
+                <input type="text" id="email" placeholder="Email address"style="display: block; text-align: center">
+                <button type="submit" id="btnSubmit">Submit</button>
+            </form>
+        </div>
+        
+        <script>
+            let reName = /^[A-Z a-z]+$/;
+            let rePhone = /^[0-9]+$/;
+            let reEmail = /^\S+@\S+\.\S+$/;  
+            let registerBtn = document.getElementById("registerForm");
+            registerBtn.addEventListener("submit", (e) => {
+                let name = document.getElementById("fullname").value;
+                let phone = document.getElementById("phone").value;
+                let email = document.getElementById("email").value; 
+                if (name.match(reName)) {
+                    if (phone.match(rePhone) && (phone.length >=10 && phone.length <=11)) {
+                        if (email.match(reEmail)) {
+                            document.write(
+                                `<img style="display: block; margin-left: auto; margin-right: auto; width: 250px; height: 250px" src="https://icons.iconarchive.com/icons/matiasam/ios7-style/512/Clear-Tick-icon.png" width=100px height=100px>`
+                            )
+                            document.write(
+                                `<h2 style="text-align: center;">You have registered as ${name} <br>Your phone number is ${phone} <br>Your email address is ${email} </h2>`
+                            )
+                            document.write(
+                                `<img style="display: block; margin-left: auto; margin-right: auto; width: 250px; height: 250px" src="https://i.pinimg.com/originals/12/f6/ac/12f6accc21f3cad0047fc68fc282569c.gif" width=100px height=100px>`
+                            )
+                            document.body.style.backgroundColor = "black";
+                            document.body.style.color = "white";
+                        } else { alert("Email is not of the correct format"); }
+                    }
+                    else { alert("Phone number is not of the correct format"); }
+                }
+                else { alert("Full name is not of the correct format"); }
+            })
+        </script>
+    </body>
+</html>
